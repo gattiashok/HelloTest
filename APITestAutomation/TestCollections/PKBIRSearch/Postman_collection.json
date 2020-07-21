@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "5515f338-4922-49c1-a582-64590f834156",
+		"name": "PKBIRCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Productsupplementalinfossystemapi-items.supplemental",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "efe1c64d-8c64-44d9-9324-48c20e9f86f9",
+						"exec": [
+							"pm.test(\"Status code is \" + pm.response.code + \" - \" + pm.response.reason(), function () {",
+							"    pm.response.to.have.status(200);",
+							"    pm.expect(pm.response.text()).to.not.include(\"error\");",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-IBM-Client-Secret",
+						"value": "{{X-IBM-Client-Secret}}"
+					},
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{X-IBM-Client-Id}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sku\": \"{{sku}}\",\r\n  \"siteId\": {{siteId}}\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/productsupplementalinfossystemapi/api/system/v1/product/items/supplemental?=&=",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"productsupplementalinfossystemapi",
+						"api",
+						"system",
+						"v1",
+						"product",
+						"items",
+						"supplemental"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						},
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Productsupplementalinfossystemapi-items.gemstones.detail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dac362a4-5f65-489b-8998-3b8c33c934f5",
+						"exec": [
+							"pm.test(\"Status code is \" + pm.response.code + \" - \" + pm.response.reason(), function () {",
+							"    pm.response.to.have.status(200);",
+							"    pm.expect(pm.response.text()).to.not.include(\"error\");",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();   ",
+							"    pm.expect(jsonData.value).to.eql(100);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok;",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"Invalid sku should be return blank gemstoneDetailList\", function () {",
+							"   var jsonData = pm.response.json();",
+							"   pm.expect(jsonData.resultDto.sku).is.to.equal('12345678');",
+							"    pm.expect(jsonData.resultDto.gemstoneDetailList.length).is.to.equal(0);",
+							"});",
+							"pm.test(\"The api result should be based on Primary Flag\", function () {",
+							"   var jsonData = pm.response.json();",
+							"   var isPrimaryFlag=false;",
+							"   for(i = 0; i < jsonData.gemstoneDetailList.length; i++)",
+							"   {",
+							"       if(jsonData.gemstoneDetailList[i].primaryFlag == \"P\")",
+							"       {",
+							"           isPrimaryFlag=true;",
+							"       }",
+							"   }",
+							"   if(!isPrimaryFlag)",
+							"   {",
+							"       ",
+							"   }",
+							"  ",
+							"});",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-IBM-Client-Secret",
+						"value": "{{X-IBM-Client-Secret}}"
+					},
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{X-IBM-Client-Id}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sku\": \"18829932\",\r\n  \"siteId\": {{siteId}}\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/productsupplementalinfossystemapi/api/system/v1/product/items/gemstones/detail?=&=",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"productsupplementalinfossystemapi",
+						"api",
+						"system",
+						"v1",
+						"product",
+						"items",
+						"gemstones",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						},
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a2880b3d-285e-4900-a42f-9ca9d9e35331",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "63dd1d46-f4c4-48e6-90ca-14a2d92d1a8e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "467b1932-fb4d-45ff-a422-e33c6eb426f6",
+			"key": "siteId",
+			"value": "41"
+		},
+		{
+			"id": "b55012ec-08da-4782-ab38-32e41237e5e6",
+			"key": "sku",
+			"value": "19552268"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

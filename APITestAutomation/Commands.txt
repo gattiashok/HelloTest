@@ -1,0 +1,4 @@
+
+Newman Command to run the Test cases
+===============================================
+newman run Postman_collection.json -e env-dev01.json -d Datafile.json --reporters cli,json --reporter-json-export Outputfile.json -k

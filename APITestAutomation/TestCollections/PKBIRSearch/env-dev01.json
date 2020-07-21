@@ -1,0 +1,27 @@
+{
+	"id": "d1bd430b-25a1-4e7d-9425-de6d665a6793",
+	"name": "dev01",
+	"values": [
+		{
+			"key": "url",
+			"value": "https://dev-api.tiffco.net/ibmdev/dev01",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "X-IBM-Client-Id",
+			"value": "32f7355b-8386-4593-ab0f-aa48e8175411",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "X-IBM-Client-Secret",
+			"value": "hE5dY3hE7sD6pO5kG2hI3qA0bW8uJ4jM7cD5jN3kN5tA2qT3cW",
+			"description": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-07-01T06:05:18.176Z",
+	"_postman_exported_using": "Postman/7.27.0"
+}
